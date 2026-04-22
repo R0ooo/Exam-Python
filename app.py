@@ -15,6 +15,7 @@ sexes  = sorted(df["Gender"].unique())
 
 # ============================ Application =====================#
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
+server = app.server
 
 # ============================ Style global =====================#
 app.index_string = '''
