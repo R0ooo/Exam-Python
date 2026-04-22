@@ -3,6 +3,7 @@ from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
+import os
 
 # ============================ Données =========================#
 df = pd.read_csv(r"C:\Users\compteadmin\Documents\python\supermarket_sales.csv")
@@ -200,6 +201,8 @@ def update_dashboard(city, gender):
 
     return total_achats, avg_rating, fig_histo, fig_pie, fig_line
 
-
 if __name__ == "__main__":
-    app.run(debug=True, port=8051, jupyter_mode="external")
+    app.run_server(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 8050))
+    )
