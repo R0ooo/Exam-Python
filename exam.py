@@ -6,7 +6,7 @@ import plotly.express as px
 import os
 
 # ============================ Données =========================#
-df = pd.read_csv(r"C:\Users\compteadmin\Documents\python\supermarket_sales.csv")
+df = pd.read_csv("supermarket_sales.csv")
 df["Date"] = pd.to_datetime(df["Date"])
 df["Week"] = df["Date"].dt.to_period("W").apply(lambda r: r.start_time)
 
