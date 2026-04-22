@@ -164,11 +164,11 @@ def update_dashboard(city, gender):
     # Camembert
     pie_data = dff.groupby("Product line", as_index=False)["Total"].sum()
     fig_pie = px.pie(
-    pie_data, names="Product line", values="Total",
-    title="Ventes par catégorie de produit",
-    color_discrete_sequence=px.colors.qualitative.Pastel,
-    hole=0.35,
-)
+        pie_data, names="Product line", values="Total",
+        title="Ventes par catégorie de produit",
+        color_discrete_sequence=px.colors.qualitative.Pastel,
+        hole=0.35,
+    )
     fig_pie.update_traces(textposition="inside", textinfo="percent", textfont_size=10)
     fig_pie.update_layout(
         margin=dict(l=10, r=10, t=35, b=10),
@@ -182,8 +182,7 @@ def update_dashboard(city, gender):
             x=0.5,
             font=dict(size=9),
         ),
-)
-
+    )
 
     # Évolution hebdomadaire
     line_data = (
